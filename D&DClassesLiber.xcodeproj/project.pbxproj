@@ -10,6 +10,15 @@
 		373DD6AB2032650B001C84A2 /* Neometric-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 373DD6AA2032650A001C84A2 /* Neometric-Medium.otf */; };
 		373DD6AF2037CC2A001C84A2 /* ClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DD6AE2037CC2A001C84A2 /* ClassTableViewCell.swift */; };
 		373DD7112045FF94001C84A2 /* Class2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373DD7102045FF94001C84A2 /* Class2ViewController.swift */; };
+		376C6EE9206916E800FD0AE0 /* SubClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C6EE8206916E800FD0AE0 /* SubClassViewController.swift */; };
+		376C6EEB2069170200FD0AE0 /* RaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C6EEA2069170200FD0AE0 /* RaceViewController.swift */; };
+		376C6EED2069171400FD0AE0 /* SubRaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C6EEC2069171400FD0AE0 /* SubRaceViewController.swift */; };
+		376C6EEF2069174800FD0AE0 /* SubRace2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C6EEE2069174800FD0AE0 /* SubRace2ViewController.swift */; };
+		376C6EF12069176600FD0AE0 /* Race2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C6EF02069176600FD0AE0 /* Race2ViewController.swift */; };
+		376C6EF32069178300FD0AE0 /* SubClass2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C6EF22069178300FD0AE0 /* SubClass2ViewController.swift */; };
+		376C6EF5206A150F00FD0AE0 /* SubClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C6EF4206A150F00FD0AE0 /* SubClassTableViewCell.swift */; };
+		376C6EF7206A153700FD0AE0 /* RaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C6EF6206A153700FD0AE0 /* RaceTableViewCell.swift */; };
+		376C6EF9206A154800FD0AE0 /* SubRaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376C6EF8206A154800FD0AE0 /* SubRaceTableViewCell.swift */; };
 		377CBAB0201B6B7F0081E445 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377CBAAF201B6B7F0081E445 /* AppDelegate.swift */; };
 		377CBAB2201B6B7F0081E445 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377CBAB1201B6B7F0081E445 /* ViewController.swift */; };
 		377CBAB5201B6B7F0081E445 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 377CBAB3201B6B7F0081E445 /* Main.storyboard */; };
@@ -50,6 +59,15 @@
 		373DD6AA2032650A001C84A2 /* Neometric-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Neometric-Medium.otf"; path = "../../../DandDWeaponCodexGithub/D&DWeaponCodex/Resources/Neometric-Medium.otf"; sourceTree = "<group>"; };
 		373DD6AE2037CC2A001C84A2 /* ClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassTableViewCell.swift; sourceTree = "<group>"; };
 		373DD7102045FF94001C84A2 /* Class2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class2ViewController.swift; sourceTree = "<group>"; };
+		376C6EE8206916E800FD0AE0 /* SubClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubClassViewController.swift; sourceTree = "<group>"; };
+		376C6EEA2069170200FD0AE0 /* RaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceViewController.swift; sourceTree = "<group>"; };
+		376C6EEC2069171400FD0AE0 /* SubRaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubRaceViewController.swift; sourceTree = "<group>"; };
+		376C6EEE2069174800FD0AE0 /* SubRace2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubRace2ViewController.swift; sourceTree = "<group>"; };
+		376C6EF02069176600FD0AE0 /* Race2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Race2ViewController.swift; sourceTree = "<group>"; };
+		376C6EF22069178300FD0AE0 /* SubClass2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubClass2ViewController.swift; sourceTree = "<group>"; };
+		376C6EF4206A150F00FD0AE0 /* SubClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubClassTableViewCell.swift; sourceTree = "<group>"; };
+		376C6EF6206A153700FD0AE0 /* RaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceTableViewCell.swift; sourceTree = "<group>"; };
+		376C6EF8206A154800FD0AE0 /* SubRaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubRaceTableViewCell.swift; sourceTree = "<group>"; };
 		377CBAAC201B6B7F0081E445 /* D&DClassesLiber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "D&DClassesLiber.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		377CBAAF201B6B7F0081E445 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		377CBAB1201B6B7F0081E445 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +222,9 @@
 			isa = PBXGroup;
 			children = (
 				373DD6AE2037CC2A001C84A2 /* ClassTableViewCell.swift */,
+				376C6EF4206A150F00FD0AE0 /* SubClassTableViewCell.swift */,
+				376C6EF6206A153700FD0AE0 /* RaceTableViewCell.swift */,
+				376C6EF8206A154800FD0AE0 /* SubRaceTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +234,12 @@
 			children = (
 				377CBAB1201B6B7F0081E445 /* ViewController.swift */,
 				373DD7102045FF94001C84A2 /* Class2ViewController.swift */,
+				376C6EE8206916E800FD0AE0 /* SubClassViewController.swift */,
+				376C6EF22069178300FD0AE0 /* SubClass2ViewController.swift */,
+				376C6EEA2069170200FD0AE0 /* RaceViewController.swift */,
+				376C6EF02069176600FD0AE0 /* Race2ViewController.swift */,
+				376C6EEC2069171400FD0AE0 /* SubRaceViewController.swift */,
+				376C6EEE2069174800FD0AE0 /* SubRace2ViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -403,18 +430,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				376C6EF7206A153700FD0AE0 /* RaceTableViewCell.swift in Sources */,
+				376C6EE9206916E800FD0AE0 /* SubClassViewController.swift in Sources */,
+				376C6EF32069178300FD0AE0 /* SubClass2ViewController.swift in Sources */,
 				377CBAB8201B6B7F0081E445 /* D_DClassesLiber.xcdatamodeld in Sources */,
 				377CBAE5201B74950081E445 /* CharacterSubClass.swift in Sources */,
+				376C6EEF2069174800FD0AE0 /* SubRace2ViewController.swift in Sources */,
 				377CBAF8201EC6B10081E445 /* CharacterRace.swift in Sources */,
+				376C6EF12069176600FD0AE0 /* Race2ViewController.swift in Sources */,
 				377CBAF6201EBEA00081E445 /* Levels.swift in Sources */,
 				373DD6AF2037CC2A001C84A2 /* ClassTableViewCell.swift in Sources */,
 				377CBAFC201ED45F0081E445 /* Languages.swift in Sources */,
 				377CBAB2201B6B7F0081E445 /* ViewController.swift in Sources */,
+				376C6EED2069171400FD0AE0 /* SubRaceViewController.swift in Sources */,
 				377CBAE1201B6C490081E445 /* CharacterClass.swift in Sources */,
 				373DD7112045FF94001C84A2 /* Class2ViewController.swift in Sources */,
+				376C6EF5206A150F00FD0AE0 /* SubClassTableViewCell.swift in Sources */,
 				377CBAE3201B73A70081E445 /* TODO List.swift in Sources */,
 				377CBAE7201BF6620081E445 /* CharacterFeatures.swift in Sources */,
 				377CBAB0201B6B7F0081E445 /* AppDelegate.swift in Sources */,
+				376C6EEB2069170200FD0AE0 /* RaceViewController.swift in Sources */,
+				376C6EF9206A154800FD0AE0 /* SubRaceTableViewCell.swift in Sources */,
 				377CBAFE201ED9F70081E445 /* BaseUrl.swift in Sources */,
 				377CBAFA201EC6C50081E445 /* CharacterSubRace.swift in Sources */,
 			);

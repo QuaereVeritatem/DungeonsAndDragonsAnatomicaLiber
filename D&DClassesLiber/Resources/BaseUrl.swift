@@ -13,6 +13,8 @@ import Foundation
 
 enum BaseUrl: String {
   case classes = "http://dnd5eapi.co/api/classes/" // or try "http://www.dnd5eapi.co/api/classes/"
+  case subclasses = "http://dnd5eapi.co/api/subclasses/"
   case races = "http://dnd5eapi.co/api/races/"
+  case subraces = "http://dnd5eapi.co/api/subraces/"
 
 }

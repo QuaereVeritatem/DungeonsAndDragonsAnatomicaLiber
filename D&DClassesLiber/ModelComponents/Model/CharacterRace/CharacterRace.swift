@@ -12,20 +12,20 @@ struct CharacterRace: Codable {
   let id: String
   let index: IntegerLiteralType
   let name: String
-  let speed: IntegerLiteralType
-  let abilityBonuses: [IntegerLiteralType]
-  let alignment: String
-  let ageDescript: String
-  let size: String
-  let sizeDescript: String
-  let startingProf: [StartingProf]
-  let languageNames: [LanguageNames]
-  let languageDescript: String
-  let traits: [Traits]
-  let subRaceNames: [SubRaceNames] 
+  let speed: IntegerLiteralType?
+  let abilityBonuses: [IntegerLiteralType]?
+  let alignment: String?
+  let ageDescript: String?
+  let size: String?
+  let sizeDescript: String?
+  let startingProf: [StartingProf]?
+  let languageNames: [LanguageNames]?
+  let languageDescript: String?
+  let traits: [Traits]?
+  let subRaceNames: [SubRaceNames]?
   let url: String
   
-  init(id: String, index: IntegerLiteralType, name: String, speed: IntegerLiteralType, abilityBonuses: [IntegerLiteralType], alignment: String, ageDescript: String, size: String, sizeDescript: String, startingProf: [StartingProf], languageNames: [LanguageNames], languageDescript: String, traits: [Traits], subRaceNames: [SubRaceNames], url: String){
+  init(id: String, index: IntegerLiteralType, name: String, speed: IntegerLiteralType?, abilityBonuses: [IntegerLiteralType]?, alignment: String?, ageDescript: String?, size: String?, sizeDescript: String?, startingProf: [StartingProf]?, languageNames: [LanguageNames]?, languageDescript: String?, traits: [Traits]?, subRaceNames: [SubRaceNames]?, url: String){
     self.id =  id
     self.index = index
     self.name = name
