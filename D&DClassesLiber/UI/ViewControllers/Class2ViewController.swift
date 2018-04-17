@@ -46,26 +46,15 @@ class Class2ViewController: UIViewController {
         className.text! = (classJSON.last?.name)!
         classPic.image = UIImage(imageLiteralResourceName: className.text!)
         hitDie.text! = String(describing: classJSON.last!.hitDie)
-      
-     // if let strNum.text! = String(describing: (thisClass?.savingThrows[])!) {}
-    //  if let strIndex = thisClass?.savingThrows[0...].name.index(of: "STR") {
-    //    strNum.text! = " 1"
-     // }
-      
-      //dexNum.text? = String(describing: (thisClass?.dexNum)!)
-      //conNum.text? = String(describing: (thisClass?.conNum)!)
-      //intNum.text? = String(describing: (thisClass?.intNum)!)
-      //wisNum.text? = String(describing: (thisClass?.wisNum)!)
-      //chaNum.text? = String(describing: (thisClass?.chaNum)!)
-      
+
       //this will be all arrays
       //subclass list
         for loopC in 0..<classJSON.last!.subClassesLists.count {
           arraySubClass.append((classJSON.last!.subClassesLists[loopC].name))
-      }
-      let subCList = arraySubClass.map { String(describing: $0) }
-        .joined(separator: ", ")
-      subClassList!.text? = subCList
+        }
+        let subCList = arraySubClass.map { String(describing: $0) }
+          .joined(separator: ", ")
+        subClassList!.text? = subCList
       
       //skills list
       for loop in 0..<classJSON.last!.profChoices[0].from.count {
@@ -84,11 +73,6 @@ class Class2ViewController: UIViewController {
       let profs = arrayProfName.map { String(describing: $0) }
         .joined(separator: ", ")
       profList.text! = profs
-      
-      //fix data models
-/*      startingEquipmList.text? = (thisClass?.startingEquip { String(describing: $0) }
-        .joined(separator: ", "))!  */
-      
       //fix data models
       classLevelsInfo.text? = (classJSON.last!.classLevels.charClass.map { String(describing: $0) }
         .joined(separator: ", "))

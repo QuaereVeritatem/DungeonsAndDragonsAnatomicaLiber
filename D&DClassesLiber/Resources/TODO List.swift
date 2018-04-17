@@ -10,5 +10,5 @@ import Foundation
 
 //TODO List
 
-// 1) Init and coding keys on all structs/methods
+// 1) character subrace model needs to be redone
 // 2) 

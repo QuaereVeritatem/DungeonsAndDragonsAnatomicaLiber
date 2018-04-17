@@ -15,12 +15,16 @@ struct CharacterSubRace: Codable {
   let mainRaceName: MainRaceName
   let descript: String
   let abilityBonuses: [IntegerLiteralType]
-  let startingRaceProf: [StartingRaceProf] // JSON reads as "starting_proficiencies"
+  let startingRaceProf: [StartingRaceProf]? // JSON reads as "starting_proficiencies"
   let languages: [Languages]
-  let racialTraits: [Traits] // JSON reads as "racial_traits"
+  // there is a "language options" var for high elf [in JSON]
+  let languageOptions: LanguageOptions?
+  let racialTraits: [Traits]? // JSON reads as "racial_traits"
+  // there is a "racial trait options" var for high elf [in JSON]
+  let racialTraitOptions: RacialTraitOptions?
   let url: String
   
-  init(id: String, index: IntegerLiteralType, name: String, mainRaceName: MainRaceName, descript: String, abilityBonuses: [IntegerLiteralType], startingRaceProf: [StartingRaceProf], languages: [Languages], racialTraits: [Traits], url: String){
+  init(id: String, index: IntegerLiteralType, name: String, mainRaceName: MainRaceName, descript: String, abilityBonuses: [IntegerLiteralType], startingRaceProf: [StartingRaceProf]?, languages: [Languages], languageOptions: LanguageOptions?, racialTraits: [Traits]?, racialTraitOptions: RacialTraitOptions?, url: String){
     self.id =  id
     self.index = index
     self.name = name
@@ -29,7 +33,9 @@ struct CharacterSubRace: Codable {
     self.abilityBonuses = abilityBonuses
     self.startingRaceProf = startingRaceProf
     self.languages = languages
+    self.languageOptions = languageOptions
     self.racialTraits = racialTraits
+    self.racialTraitOptions = racialTraitOptions
     self.url = url
   }
   
@@ -42,7 +48,9 @@ struct CharacterSubRace: Codable {
     case abilityBonuses = "ability_bonuses"
     case startingRaceProf = "starting_proficiencies"
     case languages = "languages"
+    case languageOptions = "language_options"
     case racialTraits = "racial_traits"
+    case racialTraitOptions = "racial_trait_options"
     case url = "url"
     
   }
@@ -92,6 +100,43 @@ struct StartingRaceProf: Codable {
     case url = "url"
   }
 }
+  
+  struct LanguageOptions: Codable {
+    let choose: IntegerLiteralType
+    let from: [From]
+    let type: String
+    
+    init(choose: IntegerLiteralType, from: [From], type: String){
+      self.choose = choose
+      self.from = from
+      self.type = type
+  }
+    
+    enum CodingKeys: String, CodingKey {
+      case choose = "choose"
+      case from = "from"
+      case type = "type"
+    }
+}
+  
+  struct RacialTraitOptions: Codable {
+    let choose: IntegerLiteralType
+    let from: [From]
+    let type: String
+    
+    init(choose: IntegerLiteralType, from: [From], type: String){
+      self.choose = choose
+      self.from = from
+      self.type = type
+  }
+    
+    enum CodingKeys: String, CodingKey {
+      case choose = "choose"
+      case from = "from"
+      case type = "type"
+    }
+}
+
 
 
 

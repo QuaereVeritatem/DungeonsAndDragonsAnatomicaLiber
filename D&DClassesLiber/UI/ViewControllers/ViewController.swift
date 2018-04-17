@@ -148,37 +148,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     selectedCell = indexPath.row
     print("We changed the selected cell to the current cell of \(selectedCell)")
-    
-    //self.updateTheLabels(weapon: weapMod[row])
-    //updateTableView(charClass: cMod[indexPath.row])
-    
-    //self.performSegue(withIdentifier: "class2ClassDetail", sender: self)
-    
-    // Create a variable that you want to send based on the destination view controller
-    // You can get a reference to the data by using indexPath shown below
     let selectedProgram = cMod[indexPath.row]
-    
-    // Create an instance of PlayerTableViewController and pass the variable
-    //let destinationVC = Class2ViewController()
-    // all examples have this as an equal statement (below)
-    //destinationVC.classJSON.append(selectedProgram)
     self.cMod[indexPath.row] = selectedProgram
     tempMod.append(selectedProgram)
-    // Let's assume that the segue name is called playerSegue
-    // This will perform the segue and pre-load the variable for you to use
-    //print("The destinationVC array is \(destinationVC.classJSON)")
     self.performSegue(withIdentifier: "class2ClassDetail", sender: self)
-    
-    /*
-   -  let armor2Send = aMod[indexPath.row]
-     tempMod.append(armor2Send)
-     self.aMod[indexPath.row] = armor2Send
-     
-     print(tempMod.last!.name)
-     
-     self.performSegue(withIdentifier: "armor2ArmorDetailSegue", sender: self)
- */
-    
   }
   
   func updateTableView(charClass: CharacterClass) -> ClassTableViewCell {
@@ -188,13 +161,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     if cMod.count > 1 {
       newCell.className.text! = charClass.name  //className.text! = charClass.name
     }
- 
-    //newCell.classImage =
-    //this is an array (no "skills" in JSON so prof. choices?)
-    // cell.skillList.text! = cMod[indexPath.row].profChoices
-    //this is an array (prof. choices or proficiencies?)
-    // cell.proficiencyList.text! = cMod[indexPath.row].proficiencies
-    
     return newCell
   }
 
@@ -214,32 +180,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
   func updateTheLabels(c: [CharacterClass]) {
     
     var allPropLabel: String = ""
-    //weaponPicker.reloadAllComponents()
-    // *** self.pickerView(weapon.name)
-    //self.uuid.text = pickerDataSource[row]
-    // self.weaponPicker.dataSource = weapon.name as! UIPickerViewDataSource
-    // let title = pickerView(weaponPicker, titleForRow: weapon.index!, forComponent: 0)
-    /*
-    itemType.text = weapon.equipmentCategory
-    subType.text = weapon.weaponCategory
-    damageType.text = String(describing: weapon.index!)
-    rangeLabel.text = weapon.weaponRange
-    weaponCategoryLabel.text = weapon.categoryRange
-    damageDiceLabel.text =  String(describing: weapon.damage!.diceCount)
-    damageValueLabel.text =  String(describing: weapon.damage!.diceValue)
-    damageTypeLabel.text = weapon.damage?.damageType.name
-    
-    // I need to change the banner size to make room for an array of properties
-    //propertyLabel.text = getNumbers(array: weapon.properties![0])
-    for pLoop in weapon.properties! {
-      allPropLabel.append(String(describing:pLoop.name) + ". ")
-      print(allPropLabel)
-    }
-    propertyLabel.text =  allPropLabel
-    
-    costLabel.text  = String(describing: weapon.cost!.quantity) + " " + (weapon.cost!.unit)
-    weightLabel.text = String(describing: weapon.weight!)
-    urlLabel.text = weapon.url  */
   }
   
 

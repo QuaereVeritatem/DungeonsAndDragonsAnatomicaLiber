@@ -12,6 +12,7 @@ class RaceViewController: UIViewController, UITableViewDelegate, UITableViewData
 
   var rMod = [CharacterRace]()
   var tempMod = [CharacterRace]()
+  // change the name of this to raceCount
   var classCount: IntegerLiteralType = 9
   var tempImage: UIImageView = UIImageView(image: UIImage.init(named: "ClassRacePicFrame") )
   
@@ -19,8 +20,6 @@ class RaceViewController: UIViewController, UITableViewDelegate, UITableViewData
   
   override func viewDidLoad() {
         super.viewDidLoad()
-
-    
      // sMod needs to be passed to next viewController and then passed back!
      if rMod.count < 1 {
      for loopCount in 0...8 {
