@@ -10,6 +10,7 @@ import UIKit
 
 class SubClass2ViewController: UIViewController {
 
+  @IBOutlet weak var subClass2Scroll: UIScrollView!
   @IBAction func backButton(_ sender: UIButton) {
   }
   @IBOutlet weak var subClassName: UILabel!
@@ -51,12 +52,16 @@ class SubClass2ViewController: UIViewController {
         
         //this will be all arrays
         //subclass list
-        for loopC in 0..<subClassJSON.last!.subclassFeatures.count  {
-          arraySubClass.append((subClassJSON.last!.subclassFeatures[loopC].name))
+        for loopC in subClassJSON.last!.subclassFeatures  { // loopC in 0..<subClassJSON.last!.subclassFeatures.count
+          arraySubClass.append(loopC.name)
         }
         let subCList = arraySubClass.map { String(describing: $0) }
           .joined(separator: ", ")
-        featuresSpells!.text? = subCList
+        if subCList.isEmpty {
+          featuresSpells!.text? = "No Features/Spells"
+        } else {
+          featuresSpells!.text? = subCList
+        }
 
       }
     }
