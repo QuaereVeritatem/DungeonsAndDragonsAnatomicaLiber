@@ -111,34 +111,15 @@ class RaceViewController: UIViewController, UITableViewDelegate, UITableViewData
         // This isnt working
         cell.traitList.text! = "No traits"
       }
-      
-      /*
-       // loop to turn array into 1 string and remove "Skill: " string from skill names
-       for loop in 0..<sMod[indexPath.row].subclassFeatures.count{
-       tempWord = sMod[indexPath.row].subclassFeatures[loop].name
-       //tempWord = tempWord.replacingOccurrences(of: "Skill: ", with: "")
-       arrayDesc.append(tempWord)
-       }
-       let descList = arrayDesc.map { String(describing: $0) }
-       .joined(separator: ", ")
-       cell.proficiencyList.text! = descList */
+  
       // print("The feature list is \(sMod[indexPath.row].description)")
     } else {
       
       
     }
     
-    // cell.textLabel?.text = text
-    /*  cell.className.text! = cMod[indexPath.row].name
-     cell.hitDieNum.text = String(cMod[indexPath.row].hitDie)
-     cell.indexNum.text! = String(cMod[indexPath.row].index)
-     */
-    //cell.className.text! = tableData[indexPath.row]
-    //cell.classImage =
-    //this is an array (no "skills" in JSON so prof. choices?)
-    // cell.skillList.text! = cMod[indexPath.row].profChoices
-    //this is an array (prof. choices or proficiencies?)
-    // cell.proficiencyList.text! = cMod[indexPath.row].proficiencies
+   
+    
     return cell
   }
   
@@ -147,18 +128,18 @@ class RaceViewController: UIViewController, UITableViewDelegate, UITableViewData
     let selectedProgram = rMod[indexPath.row]
     self.rMod[indexPath.row] = selectedProgram
     tempMod.append(selectedProgram)
-    self.performSegue(withIdentifier: "class2ClassDetail", sender: self)
+    self.performSegue(withIdentifier: "race2RaceDetail", sender: self)
   }
   
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     // *** !!!!PROBlem: this is getting called before func didselectrow
-    if segue.destination is SubClass2ViewController
+    if segue.destination is Race2ViewController
     {
       print("The segue identifier is \(segue.identifier)")
-      let vc = segue.destination as? SubClass2ViewController
-      //vc?.classJSON.append(tempMod.last!)
+      let vc = segue.destination as? Race2ViewController
+      vc?.raceJSON.append(tempMod.last!)
       //print("We sending the class name \(cMod[selectedCell].name) in the segue func over")
     }
   }

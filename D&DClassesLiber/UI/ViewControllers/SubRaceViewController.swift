@@ -103,15 +103,15 @@ class SubRaceViewController: UIViewController, UITableViewDelegate, UITableViewD
     let selectedProgram = sMod[indexPath.row]
     self.sMod[indexPath.row] = selectedProgram
     tempMod.append(selectedProgram)
-    self.performSegue(withIdentifier: "class2ClassDetail", sender: self)
+    self.performSegue(withIdentifier: "subRace2SubRaceDetail", sender: self)
    }
   
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     // *** !!!!PROBlem: this is getting called before func didselectrow
-    if segue.destination is SubClass2ViewController {
+    if segue.destination is SubRace2ViewController {
       print("The segue identifier is \(segue.identifier)")
-      let vc = segue.destination as? SubClass2ViewController
-      //vc?.classJSON.append(tempMod.last!)
+      let vc = segue.destination as? SubRace2ViewController
+      vc?.subRaceJSON.append(tempMod.last!)
       //print("We sending the class name \(cMod[selectedCell].name) in the segue func over")
     }
    }

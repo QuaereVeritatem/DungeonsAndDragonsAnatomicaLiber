@@ -10,26 +10,53 @@ import UIKit
 
 class SubRace2ViewController: UIViewController {
 
+  @IBAction func backBtn(_ sender: UIButton) {
+  }
+  
+  @IBOutlet weak var subRaceName: UILabel!
+  @IBOutlet weak var subRacePic: UIImageView!
+  @IBOutlet weak var hitDie: UILabel!
+  @IBOutlet weak var strNum: UILabel!
+  @IBOutlet weak var dexNum: UILabel!
+  @IBOutlet weak var conNum: UILabel!
+  @IBOutlet weak var intNum: UILabel!
+  @IBOutlet weak var wisNum: UILabel!
+  @IBOutlet weak var chaNum: UILabel!
+  
+  @IBOutlet weak var subRaceDescription: UILabel!
+  @IBOutlet weak var profList: UILabel!
+  @IBOutlet weak var racialTraitsList: UILabel!
+  @IBOutlet weak var languages: UILabel!
+  @IBOutlet weak var mainRaceName: UILabel!
+  var subRaceJSON: [CharacterSubRace] = []
+  
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+      if let classN = subRaceJSON.last?.name {
+        subRaceName.text! = (subRaceJSON.last?.name)!
+        // subRacePic.image = UIImage(imageLiteralResourceName: subRaceName.text!)
+        mainRaceName.text! = (subRaceJSON.last?.mainRaceName.name)!
+        subRaceDescription.text! = (subRaceJSON.last?.descript)!
+        // hitDieNum.text! = String(describing: subClassJSON.last!.hitDie)
+        
+        //this will be all arrays
+        //subclass list
+        /*   for loopC in raceJSON.last!.subclassFeatures  { // loopC in 0..<subClassJSON.last!.subclassFeatures.count
+         arraySubClass.append(loopC.name)
+         }
+         let subCList = arraySubClass.map { String(describing: $0) }
+         .joined(separator: ", ")
+         if subCList.isEmpty {
+         featuresSpells!.text? = "No Features/Spells"
+         } else {
+         featuresSpells!.text? = subCList
+         } */
+        
+      }
+  }
+  
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
