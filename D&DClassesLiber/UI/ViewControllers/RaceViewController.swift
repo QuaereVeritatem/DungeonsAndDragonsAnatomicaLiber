@@ -112,14 +112,10 @@ class RaceViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.traitList.text! = "No traits"
       }
   
-      // print("The feature list is \(sMod[indexPath.row].description)")
     } else {
-      
-      
+            
     }
-    
-   
-    
+ 
     return cell
   }
   

@@ -126,21 +126,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       cell.proficiencyList.text! = profList
       
     } else {
-      
-      
+            
     }
-    
-    // cell.textLabel?.text = text
-  /*  cell.className.text! = cMod[indexPath.row].name
-    cell.hitDieNum.text = String(cMod[indexPath.row].hitDie)
-    cell.indexNum.text! = String(cMod[indexPath.row].index)
-    */
-    //cell.className.text! = tableData[indexPath.row]
-    //cell.classImage =
-    //this is an array (no "skills" in JSON so prof. choices?)
-   // cell.skillList.text! = cMod[indexPath.row].profChoices
-    //this is an array (prof. choices or proficiencies?)
-   // cell.proficiencyList.text! = cMod[indexPath.row].proficiencies
+
     return cell
   }
   
