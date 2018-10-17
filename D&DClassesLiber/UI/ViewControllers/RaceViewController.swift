@@ -87,6 +87,7 @@ class RaceViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.raceSize.text! = possibleSize
       }
       cell.indexNum.text! = String(rMod[indexPath.row].index)
+      //cell.raceImage.image? = UIImage(named: "Halfling")!
       
       if let arrayLoop = rMod[indexPath.row].languageNames {
         for loop in rMod[indexPath.row].languageNames!{
