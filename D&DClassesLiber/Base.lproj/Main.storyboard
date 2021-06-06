@@ -994,18 +994,6 @@ this will be a long one</string>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0F-zh-gG8">
-                                                    <rect key="frame" x="179" y="53.333333333333336" width="0.0" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUP-iv-BZ5">
-                                                    <rect key="frame" x="15" y="60" width="0.0" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJz-Ua-6yH">
                                                     <rect key="frame" x="115" y="38" width="90" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
@@ -1016,12 +1004,6 @@ this will be a long one</string>
                                                     <rect key="frame" x="115" y="61.000000000000007" width="243" height="20.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXM-mm-bMh">
-                                                    <rect key="frame" x="179" y="50.333333333333336" width="0.0" height="0.0"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubClass" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iw4-8q-dq1">
@@ -1052,13 +1034,11 @@ this will be a long one</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="RQK-SB-hpO" firstAttribute="bottom" secondItem="eBN-X5-0rq" secondAttribute="bottom" constant="10" id="45O-dS-6oH"/>
-                                                <constraint firstItem="cXM-mm-bMh" firstAttribute="top" secondItem="N0F-zh-gG8" secondAttribute="bottom" constant="-3" id="5lU-zd-2Jr"/>
                                                 <constraint firstItem="2sf-48-VTs" firstAttribute="leading" secondItem="eBN-X5-0rq" secondAttribute="trailing" constant="10" id="9cs-nE-7of"/>
                                                 <constraint firstItem="eBN-X5-0rq" firstAttribute="top" secondItem="JO8-wv-aBm" secondAttribute="top" constant="10" id="ANS-Bl-Ejv"/>
                                                 <constraint firstAttribute="trailing" secondItem="RQK-SB-hpO" secondAttribute="trailing" id="DmX-kl-Puf"/>
                                                 <constraint firstItem="ldZ-Cj-JNx" firstAttribute="leading" secondItem="1C3-2V-Mhg" secondAttribute="trailing" constant="15" id="HkE-TE-03J"/>
                                                 <constraint firstItem="TJz-Ua-6yH" firstAttribute="leading" secondItem="2sf-48-VTs" secondAttribute="leading" id="Hqj-zl-8nZ"/>
-                                                <constraint firstItem="HUP-iv-BZ5" firstAttribute="leading" secondItem="JO8-wv-aBm" secondAttribute="leading" constant="15" id="Iw7-sC-Ptw"/>
                                                 <constraint firstAttribute="bottom" secondItem="RQK-SB-hpO" secondAttribute="bottom" id="O8S-ib-Qbd"/>
                                                 <constraint firstItem="2sf-48-VTs" firstAttribute="top" secondItem="RQK-SB-hpO" secondAttribute="top" constant="10" id="OwZ-SZ-ZSh"/>
                                                 <constraint firstItem="RQK-SB-hpO" firstAttribute="leading" secondItem="JO8-wv-aBm" secondAttribute="leading" id="Pc9-ZP-UXc"/>
@@ -1072,7 +1052,6 @@ this will be a long one</string>
                                                 <constraint firstItem="SWw-8n-adT" firstAttribute="top" secondItem="TJz-Ua-6yH" secondAttribute="bottom" constant="2" id="lIL-Yg-WFU"/>
                                                 <constraint firstItem="TJz-Ua-6yH" firstAttribute="top" secondItem="2sf-48-VTs" secondAttribute="bottom" constant="6.3333333333333286" id="roJ-U3-NAe"/>
                                                 <constraint firstItem="1C3-2V-Mhg" firstAttribute="leading" secondItem="SWw-8n-adT" secondAttribute="leading" id="si0-0Q-jly"/>
-                                                <constraint firstItem="cXM-mm-bMh" firstAttribute="leading" secondItem="N0F-zh-gG8" secondAttribute="leading" id="sti-bH-J4U"/>
                                                 <constraint firstItem="Iw4-8q-dq1" firstAttribute="leading" secondItem="2sf-48-VTs" secondAttribute="trailing" constant="15" id="uJx-O9-b1L"/>
                                                 <constraint firstItem="ldZ-Cj-JNx" firstAttribute="bottom" secondItem="RQK-SB-hpO" secondAttribute="bottom" constant="-10" id="z2i-5x-pL4"/>
                                             </constraints>
@@ -1081,7 +1060,6 @@ this will be a long one</string>
                                         <connections>
                                             <outlet property="hitDieNum" destination="ldZ-Cj-JNx" id="EUk-Ty-SfW"/>
                                             <outlet property="indexNum" destination="Iw4-8q-dq1" id="ruc-f0-A8p"/>
-                                            <outlet property="proficiencyList" destination="cXM-mm-bMh" id="joi-WJ-UWZ"/>
                                             <outlet property="skillList" destination="SWw-8n-adT" id="Ivz-95-rMh"/>
                                             <outlet property="subClassImage" destination="eBN-X5-0rq" id="Ad1-oh-sx3"/>
                                             <outlet property="subClassName" destination="2sf-48-VTs" id="WjZ-bn-5Mx"/>
@@ -1699,10 +1677,10 @@ this will be a long one</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Pd2-NO-5R6"/>
-        <segue reference="FWZ-Ka-1ZJ"/>
+        <segue reference="iFA-FB-O2W"/>
+        <segue reference="CEt-4F-4zI"/>
         <segue reference="UdP-L5-mvC"/>
-        <segue reference="1bx-jh-Mz4"/>
+        <segue reference="DtR-6d-4Zq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="AllPagesBG" width="375" height="814"/>
