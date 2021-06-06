@@ -9,16 +9,14 @@
 import Foundation
 
 struct Languages: Codable {
-  let id: String // JSON reads as "_id"
-  let index: IntegerLiteralType
+  let index: String
   let name: String
   let type: String
   let typicalSpeakers: [String] // JSON reads as "typical_speakers"
   let script: String
   let url: String
   
-  init(id: String, index: IntegerLiteralType, name: String, type: String, typicalSpeakers: [String], script: String, url: String){
-    self.id = id
+  init(index: String, name: String, type: String, typicalSpeakers: [String], script: String, url: String){
     self.index = index
     self.name = name
     self.type = type
@@ -28,7 +26,6 @@ struct Languages: Codable {
   }
   
   enum CodingKeys: String, CodingKey {
-    case id = "_id"
     case index = "index"
     case name = "name"
     case type = "type"

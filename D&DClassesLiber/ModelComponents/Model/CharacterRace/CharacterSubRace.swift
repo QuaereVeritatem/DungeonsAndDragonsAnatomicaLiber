@@ -9,12 +9,11 @@
 import Foundation
 
 struct CharacterSubRace: Codable {
-  let id: String
-  let index: IntegerLiteralType
+  let index: String
   let name: String
   let mainRaceName: MainRaceName
   let descript: String
-  let abilityBonuses: [IntegerLiteralType]
+  let abilityBonuses: [AbilityBonuses]
   let startingRaceProf: [StartingRaceProf]? // JSON reads as "starting_proficiencies"
   let languages: [Languages]
   // there is a "language options" var for high elf [in JSON]
@@ -24,8 +23,7 @@ struct CharacterSubRace: Codable {
   let racialTraitOptions: RacialTraitOptions?
   let url: String
   
-  init(id: String, index: IntegerLiteralType, name: String, mainRaceName: MainRaceName, descript: String, abilityBonuses: [IntegerLiteralType], startingRaceProf: [StartingRaceProf]?, languages: [Languages], languageOptions: LanguageOptions?, racialTraits: [Traits]?, racialTraitOptions: RacialTraitOptions?, url: String){
-    self.id =  id
+  init(index: String, name: String, mainRaceName: MainRaceName, descript: String, abilityBonuses: [AbilityBonuses], startingRaceProf: [StartingRaceProf]?, languages: [Languages], languageOptions: LanguageOptions?, racialTraits: [Traits]?, racialTraitOptions: RacialTraitOptions?, url: String){
     self.index = index
     self.name = name
     self.mainRaceName = mainRaceName
@@ -40,7 +38,6 @@ struct CharacterSubRace: Codable {
   }
   
   enum CodingKeys: String, CodingKey {
-    case id = "_id"
     case index = "index"
     case name = "name"
     case mainRaceName = "race"
@@ -72,16 +69,14 @@ struct MainRaceName: Codable {
 }
 
 struct StartingRaceProf: Codable {
-  let id: String
-  let index: IntegerLiteralType
-  let type: String
+  let index: String
+  let type: String?
   let name: String
-  let classes: [CharacterClass]
-  let races: [CharacterRace]
+  let classes: [CharacterClass]?
+  let races: [CharacterRace]?
   let url: String
   
-  init(id: String, index: IntegerLiteralType, type: String, name: String, classes: [CharacterClass], races: [CharacterRace], url: String){
-    self.id = id
+  init(index: String, type: String?, name: String, classes: [CharacterClass]?, races: [CharacterRace]?, url: String){
     self.index = index
     self.type = type
     self.name = name
@@ -91,7 +86,6 @@ struct StartingRaceProf: Codable {
   }
   
   enum CodingKeys: String, CodingKey {
-    case id = "_id"
     case index = "index"
     case type = "type"
     case name = "name"

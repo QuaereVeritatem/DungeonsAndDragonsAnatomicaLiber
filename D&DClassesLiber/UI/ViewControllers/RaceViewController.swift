@@ -22,32 +22,22 @@ class RaceViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
      // sMod needs to be passed to next viewController and then passed back!
      if rMod.count < 1 {
-     for loopCount in 0...8 {
-     let urlString = BaseUrl.races.rawValue +  "\(loopCount + 1)"
-     // ****  optional at end will cause program to crash!!!!
-     guard let url = URL(string: urlString) else { return }
-     
-     
+     for loopCount in raceDirectUrls {
+     guard let url = loopCount else { return }
      URLSession.shared.dataTask(with: url) { (data, response, error) in
      if error != nil {
-     print(error!.localizedDescription)
+      print(error!.localizedDescription)
      }
-     
      guard let data = data else { return }
-     
      //Implement JSON decoding and parsing
      do {
-     
-     //Decode retrived data with JSONDecoder and assing type of Article object...an array of Results
-     //let endPointData = try JSONDecoder().decode(DnDResultAPICall.self, from: data) //this was at root endpoint
-     let endPointData = try JSONDecoder().decode(CharacterRace.self, from: data)
-     self.rMod.append(endPointData)
-     print(self.rMod)
-     print("********************************************************************************************")
+      let endPointData = try JSONDecoder().decode(CharacterRace.self, from: data)
+      self.rMod.append(endPointData)
+      print(self.rMod)
+      print("********************************************************************************************")
      DispatchQueue.main.async {
-     // this calls it everytime..instead lets call when we update(didselectRow)
-     self.tableView.reloadData()
-     //
+      // this calls it everytime..instead lets call when we update(didselectRow)
+      self.tableView.reloadData()
      }
      
      } catch let jsonError {
@@ -82,12 +72,13 @@ class RaceViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     if rMod.count > 7 {
       cell.raceName.text! = rMod[indexPath.row].name
-      // cell.subClassImage.image = UIImage(imageLiteralResourceName: cell.subClassName.text!)
+      cell.raceImage.image = UIImage(imageLiteralResourceName: cell.raceName.text!)
       if let possibleSize = rMod[indexPath.row].size {
         cell.raceSize.text! = possibleSize
       }
-      cell.indexNum.text! = String(rMod[indexPath.row].index)
+      //cell.indexNum.text! = String(rMod[indexPath.row].index)
       //cell.raceImage.image? = UIImage(named: "Halfling")!
+      cell.indexNum.text! = "Race"
       
       if let arrayLoop = rMod[indexPath.row].languageNames {
         for loop in rMod[indexPath.row].languageNames!{

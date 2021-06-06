@@ -9,7 +9,6 @@
 import Foundation
 
 struct Levels: Codable {
-  let id: String  // JSON reads as "_id"
   let level: IntegerLiteralType
   let abilityBonus: IntegerLiteralType // JSON reads as "ability_score_bonus"
   let profBonus: IntegerLiteralType // JSON reads as "prof_bonus"

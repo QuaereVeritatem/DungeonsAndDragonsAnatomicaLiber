@@ -44,24 +44,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // cMod needs to be passed to next viewController and then passed back!
     if cMod.count < 1 {
-    for loopCount in 0...11 {
-    let urlString = BaseUrl.classes.rawValue +  "\(loopCount + 1)"
-    // ****  optional at end will cause program to crash!!!!
-    guard let url = URL(string: urlString) else { return }
-    
-    
+    for loopCount in classDirectUrls{
+    //let urlString = BaseUrl.classes.rawValue +  "\(loopCount + 1)"
+    guard let url = loopCount else { return }
     URLSession.shared.dataTask(with: url) { (data, response, error) in
       if error != nil {
         print(error!.localizedDescription)
       }
-      
       guard let data = data else { return }
-      
       //Implement JSON decoding and parsing
       do {
-        
         //Decode retrived data with JSONDecoder and assing type of Article object...an array of Results
-        //let endPointData = try JSONDecoder().decode(DnDResultAPICall.self, from: data) //this was at root endpoint
         let endPointData = try JSONDecoder().decode(CharacterClass.self, from: data)
         self.cMod.append(endPointData)
         print(self.cMod)
@@ -105,7 +98,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
       cell.className.text! = cMod[indexPath.row].name
       cell.classImage.image = UIImage(imageLiteralResourceName: cell.className.text!)
       cell.hitDieNum.text = String(cMod[indexPath.row].hitDie)
-      cell.indexNum.text! = String(cMod[indexPath.row].index)
+      //cell.indexNum.text! = String(cMod[indexPath.row].index)
       
       // loop to turn array into 1 string and remove "Skill: " string from skill names
       for loop in 0..<cMod[indexPath.row].profChoices[0].from.count {
@@ -136,6 +129,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     selectedCell = indexPath.row
     print("We changed the selected cell to the current cell of \(selectedCell)")
+    // next line causes prgm to **crash**
     let selectedProgram = cMod[indexPath.row]
     self.cMod[indexPath.row] = selectedProgram
     tempMod.append(selectedProgram)
@@ -188,7 +182,7 @@ extension UIImage {
     
     // image has not been created yet: create it, store it, return it
     let newImage: UIImage =  UIImage(contentsOfFile: imageName)!  // create your UIImage here
-      try? UIImagePNGRepresentation(newImage)?.write(to: imageUrl)
+      ((try? newImage.pngData()?.write(to: imageUrl)) as ()??)
     return newImage
   }
 }

@@ -9,21 +9,20 @@
 import Foundation
 
 struct CharacterClass: Codable {
-  let id: String
-  let index: IntegerLiteralType
+  let index: String
   let name: String
   let hitDie: IntegerLiteralType
   let profChoices: [ProfChoices]
   let proficiencies: [Proficiencies]
   let savingThrows: [SavingThrows]
-  let startingEquip: StartingEquip
-  let classLevels: ClassLevels
+  let startingEquip: [StartingEquip]
+  let startingEquipOptions: [StartingEquipOptions]
+  let classLevels: String  //This should be ClassLevels but I dont want to display all that info together with the rest of the info
   let subClassesLists: [SubclassesLists] // this read as subclasses in JSON
   let spellCastingName: SpellCastingName?
   let url: String
   
-  init(id: String, index: IntegerLiteralType, name: String, hitDie: IntegerLiteralType, profChoices: [ProfChoices], proficiencies: [Proficiencies], savingThrows: [SavingThrows], startingEquip: StartingEquip, classLevels: ClassLevels, subClassesLists: [SubclassesLists], spellCastingName: SpellCastingName?, url: String){
-    self.id =  id
+  init(index: String, name: String, hitDie: IntegerLiteralType, profChoices: [ProfChoices], proficiencies: [Proficiencies], savingThrows: [SavingThrows], startingEquip: [StartingEquip], startingEquipOptions: [StartingEquipOptions], classLevels: String, subClassesLists: [SubclassesLists], spellCastingName: SpellCastingName?, url: String){
     self.index = index
     self.name = name
     self.hitDie = hitDie
@@ -31,6 +30,7 @@ struct CharacterClass: Codable {
     self.proficiencies = proficiencies
     self.savingThrows = savingThrows
     self.startingEquip = startingEquip
+    self.startingEquipOptions = startingEquipOptions
     self.classLevels = classLevels
     self.subClassesLists = subClassesLists
     self.spellCastingName = spellCastingName
@@ -38,7 +38,6 @@ struct CharacterClass: Codable {
   }
   
   enum CodingKeys: String, CodingKey {
-    case id = "_id"
     case index = "index"
     case name = "name"
     case hitDie = "hit_die"
@@ -46,6 +45,7 @@ struct CharacterClass: Codable {
     case proficiencies = "proficiencies"
     case savingThrows = "saving_throws"
     case startingEquip = "starting_equipment"
+    case startingEquipOptions = "starting_equipment_options"
     case classLevels = "class_levels"
     case subClassesLists = "subclasses"
     case spellCastingName = "spellcasting"
@@ -117,19 +117,69 @@ struct SavingThrows: Codable {
   }
 }
 
-//not done right
 struct StartingEquip: Codable {
-  let url: String
-  let charClass: String // "class" is var name in JSON
+  let equipment: Equipment
+  let quantity: Int64
   
-  init(url: String, charClass: String){
-    self.url = url
-    self.charClass = charClass
+  init(equipment: Equipment, quantity: Int64) {
+    self.equipment = equipment
+    self.quantity = quantity
   }
   
   enum CodingKeys: String, CodingKey {
+    case equipment = "equipment"
+    case quantity = "quantity"
+  }
+}
+
+struct StartingEquipOptions: Codable {
+  let choose: Int64
+  let type: String
+  let from: [From2]
+  
+  init(choose: Int64, type: String, from: [From2]){
+    self.choose = choose
+    self.type = type
+    self.from = from
+  }
+  
+  enum CodingKeys: String, CodingKey {
+    case choose = "choose"
+    case type = "type"
+    case from = "from"
+  }
+}
+
+struct From2: Codable {
+  let equipment: Equipment?
+  let quantity: Int64?
+  
+  init(equipment: Equipment?, quantity: Int64?) {
+    self.equipment = equipment
+    self.quantity = quantity
+  }
+  
+  enum CodingKeys: String, CodingKey {
+    case equipment = "equipment"
+    case quantity = "quantity"
+  }
+}
+
+struct Equipment: Codable {
+  let index: String
+  let name: String
+  let url: String
+  
+  init(index: String, name: String, url: String){
+    self.index = index
+    self.name = name
+    self.url = url
+  }
+  
+  enum CodingKeys: String, CodingKey {
+    case index = "index"
+    case name = "name"
     case url = "url"
-    case charClass = "class"
   }
 }
 

@@ -9,11 +9,10 @@
 import Foundation
 
 struct CharacterRace: Codable {
-  let id: String
-  let index: IntegerLiteralType
+  let index: String
   let name: String
   let speed: IntegerLiteralType?
-  let abilityBonuses: [IntegerLiteralType]?
+  let abilityBonuses: [AbilityBonuses]?
   let alignment: String?
   let ageDescript: String?
   let size: String?
@@ -25,8 +24,7 @@ struct CharacterRace: Codable {
   let subRaceNames: [SubRaceNames]?
   let url: String
   
-  init(id: String, index: IntegerLiteralType, name: String, speed: IntegerLiteralType?, abilityBonuses: [IntegerLiteralType]?, alignment: String?, ageDescript: String?, size: String?, sizeDescript: String?, startingProf: [StartingProf]?, languageNames: [LanguageNames]?, languageDescript: String?, traits: [Traits]?, subRaceNames: [SubRaceNames]?, url: String){
-    self.id =  id
+  init(index: String, name: String, speed: IntegerLiteralType?, abilityBonuses: [AbilityBonuses]?, alignment: String?, ageDescript: String?, size: String?, sizeDescript: String?, startingProf: [StartingProf]?, languageNames: [LanguageNames]?, languageDescript: String?, traits: [Traits]?, subRaceNames: [SubRaceNames]?, url: String){
     self.index = index
     self.name = name
     self.speed = speed
@@ -44,7 +42,6 @@ struct CharacterRace: Codable {
   }
   
   enum CodingKeys: String, CodingKey {
-    case id = "_id"
     case index = "index"
     case name = "name"
     case speed = "speed"
@@ -60,6 +57,39 @@ struct CharacterRace: Codable {
     case subRaceNames =  "subraces"
     case url = "url"
     
+  }
+}
+
+struct AbilityBonuses: Codable {
+  let abiltyScore: AbiltyScore?
+  let bonus: Int64
+  
+  init(abiltyScore: AbiltyScore?, bonus: Int64) {
+    self.abiltyScore = abiltyScore
+    self.bonus = bonus
+  }
+  
+  enum CodingKeys: String, CodingKey {
+    case abiltyScore = "ability_score"
+    case bonus = "bonus"
+  }
+}
+
+struct AbiltyScore: Codable {
+  let index: String
+  let name: String
+  let url: String
+  
+  init(index: String, name: String, url: String) {
+    self.index = index
+    self.name = name
+    self.url = url
+  }
+  
+  enum CodingKeys: String, CodingKey {
+    case index = "index"
+    case name = "name"
+    case url = "url"
   }
 }
 

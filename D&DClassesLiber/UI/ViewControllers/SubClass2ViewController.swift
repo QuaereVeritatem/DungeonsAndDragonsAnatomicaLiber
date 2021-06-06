@@ -45,24 +45,13 @@ class SubClass2ViewController: UIViewController {
 
       if let classN = subClassJSON.last?.name {
         subClassName.text! = (subClassJSON.last?.name)!
-       // subClassPic.image = UIImage(imageLiteralResourceName: subClassName.text!)
-        mainClassName.text! = (subClassJSON.last?.mainClass.name)!
+        subClassPic.image = UIImage(imageLiteralResourceName: subClassName.text!)
+        mainClassName.text! = (subClassJSON.last?.mainClass!.name)!
         subClassDescription.text! = (subClassJSON.last?.description[0])!
        // hitDieNum.text! = String(describing: subClassJSON.last!.hitDie)
-        
-        //this will be all arrays
-        //subclass list
-        for loopC in subClassJSON.last!.subclassFeatures  { // loopC in 0..<subClassJSON.last!.subclassFeatures.count
-          arraySubClass.append(loopC.name)
-        }
-        let subCList = arraySubClass.map { String(describing: $0) }
-          .joined(separator: ", ")
-        if subCList.isEmpty {
-          featuresSpells!.text? = "No Features/Spells"
-        } else {
-          featuresSpells!.text? = subCList
-        }
-
+    /*    if let subClassLvls = subClassJSON.last?.subClassLevels {
+          featuresSpells.text = subClassLvls
+        }  */
       }
     }
 

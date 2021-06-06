@@ -35,10 +35,26 @@ class SubRace2ViewController: UIViewController {
 
       if let classN = subRaceJSON.last?.name {
         subRaceName.text! = (subRaceJSON.last?.name)!
-        // subRacePic.image = UIImage(imageLiteralResourceName: subRaceName.text!)
+        subRacePic.image = UIImage(imageLiteralResourceName: subRaceName.text!)
         mainRaceName.text! = (subRaceJSON.last?.mainRaceName.name)!
         subRaceDescription.text! = (subRaceJSON.last?.descript)!
-        // hitDieNum.text! = String(describing: subClassJSON.last!.hitDie)
+        
+        // languages
+        /*
+        var langArrayToString: String = ""
+        for language in (subRaceJSON.last!.languages) {
+          langArrayToString = langArrayToString + " " + language.name
+          print("Language for this is \(langArrayToString)")
+        }
+        languages.text! = langArrayToString
+        */
+        
+        var rTraitsArrayToString: String = ""
+        for racTraits in (subRaceJSON.last!.racialTraits!) {
+          rTraitsArrayToString = rTraitsArrayToString + " " + racTraits.name
+        }
+        racialTraitsList.text! = rTraitsArrayToString
+        //hitDie.text! = String(describing: subRaceJSON.last!.hitDie)
         
         //this will be all arrays
         //subclass list

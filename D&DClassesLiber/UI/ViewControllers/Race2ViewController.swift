@@ -38,11 +38,28 @@ class Race2ViewController: UIViewController {
         super.viewDidLoad()
         if let classN = raceJSON.last?.name {
           raceName.text! = (raceJSON.last?.name)!
-          // subClassPic.image = UIImage(imageLiteralResourceName: subClassName.text!)
+          racePic.image = UIImage(imageLiteralResourceName: raceName.text!)
           //mainClassName.text! = (raceJSON.last?.mainClass.name)!
-          //subClassDescription.text! = (raceJSON.last?.description[0])!
+          sizeDescription.text! = (raceJSON.last?.sizeDescript)!
+          ageDescription.text! = (raceJSON.last?.ageDescript)!
+          alignmentDescription.text! = (raceJSON.last!.alignment)!
           // hitDieNum.text! = String(describing: subClassJSON.last!.hitDie)
         
+          // languages
+          var langArrayToString: String = ""
+          for language in (raceJSON.last!.languageNames!) {
+            langArrayToString = langArrayToString + " " + language.name
+            print("Language for this is \(langArrayToString)")
+          }
+          languageList.text! = langArrayToString
+          
+          // racial traits
+          var rTraitsArrayToString: String = ""
+          for racTraits in (raceJSON.last!.traits!) {
+            rTraitsArrayToString = rTraitsArrayToString + " " + racTraits.name
+          }
+          traits.text! = rTraitsArrayToString
+          
           //this will be all arrays
           //subclass list
        /*   for loopC in raceJSON.last!.subclassFeatures  { // loopC in 0..<subClassJSON.last!.subclassFeatures.count

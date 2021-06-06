@@ -21,24 +21,15 @@ class SubClassViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
       // sMod needs to be passed to next viewController and then passed back!
       if sMod.count < 1 {
-        for loopCount in 0...11 {
-          let urlString = BaseUrl.subclasses.rawValue +  "\(loopCount + 1)"
-          // ****  optional at end will cause program to crash!!!!
-          guard let url = URL(string: urlString) else { return }
-          
-          
+        for loopCount in subClassDirectUrls {
+          guard let url = loopCount else { return }
           URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
               print(error!.localizedDescription)
             }
-            
             guard let data = data else { return }
-            
             //Implement JSON decoding and parsing
             do {
-              
-              //Decode retrived data with JSONDecoder and assing type of Article object...an array of Results
-              //let endPointData = try JSONDecoder().decode(DnDResultAPICall.self, from: data) //this was at root endpoint
               let endPointData = try JSONDecoder().decode(CharacterSubClass.self, from: data)
               self.sMod.append(endPointData)
               print(self.sMod)
@@ -76,17 +67,18 @@ class SubClassViewController: UIViewController, UITableViewDataSource, UITableVi
    
    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "subClassCellReuseIdentifier") as! SubClassTableViewCell
-    var tempWord: String = ""
-    var arrayDesc: [String] = []
-    var arrayProfList: [String] = []
+    //var tempWord: String = ""
+    //var arrayDesc: [String] = []
+    //var arrayProfList: [String] = []
     if sMod.count > 7 {
-      cell.subClassName.text! = sMod[indexPath.row].name
-      // cell.subClassImage.image = UIImage(imageLiteralResourceName: cell.subClassName.text!)
-      cell.hitDieNum.text! = sMod[indexPath.row].mainClass.name
-      cell.indexNum.text! = String(sMod[indexPath.row].index)
-      let array2String = sMod[indexPath.row].description.map { String(describing: $0) }
-        .joined(separator: ", ")
-      cell.skillList.text! = array2String
+      cell.subClassName.text! = sMod[indexPath.row].name!
+      cell.subClassImage.image = UIImage(imageLiteralResourceName: cell.subClassName.text!)
+      cell.hitDieNum.text! = sMod[indexPath.row].mainClass!.name
+      //cell.indexNum.text! = String(sMod[indexPath.row].index!)
+      //let array2String: String? = sMod[indexPath.row].description.map { String(describing: $0) }
+       // .joined(separator: ", ")
+      let array2String: String? = sMod[indexPath.row].description[0]
+      cell.skillList.text! = array2String!
 
     } else {
     }

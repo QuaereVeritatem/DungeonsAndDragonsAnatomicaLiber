@@ -28,6 +28,8 @@ class Class2ViewController: UIViewController {
   @IBOutlet weak var profList: UILabel!
   @IBOutlet weak var startingEquipmList: UILabel!
   @IBOutlet weak var classLevelsInfo: UILabel!
+  @IBOutlet weak var subClassListLabel: UILabel!
+  @IBOutlet weak var classDescription: UILabel!
   
   // var classJSON: CharacterClass
   //var thisClass: [CharacterClass] = []
@@ -46,17 +48,24 @@ class Class2ViewController: UIViewController {
         className.text! = (classJSON.last?.name)!
         classPic.image = UIImage(imageLiteralResourceName: className.text!)
         hitDie.text! = String(describing: classJSON.last!.hitDie)
+        if let subC = classJSON.last?.subClassesLists[0].name {
+          subClassListLabel.text! = subC
+        }
+        classDescription.text! = "Classes dont have descriptions...which is a weird thing for this unofficial D&D API to do"
 
       //this will be all arrays
       //subclass list
+        /*
         for loopC in 0..<classJSON.last!.subClassesLists.count {
           arraySubClass.append((classJSON.last!.subClassesLists[loopC].name))
         }
+        
         let subCList = arraySubClass.map { String(describing: $0) }
           .joined(separator: ", ")
         subClassList!.text? = subCList
-      
+      */
       //skills list
+        /*
       for loop in 0..<classJSON.last!.profChoices[0].from.count {
         tempWord = (classJSON.last!.profChoices[0].from[loop].name)
         tempWord = tempWord.replacingOccurrences(of: "Skill: ", with: "")
@@ -74,13 +83,16 @@ class Class2ViewController: UIViewController {
         .joined(separator: ", ")
       profList.text! = profs
       //fix data models
-      classLevelsInfo.text? = (classJSON.last!.classLevels.charClass.map { String(describing: $0) }
-        .joined(separator: ", "))
+      //classLevelsInfo.text? = (classJSON.last!.classLevels.charClass.map { String(describing: $0) }
+      //  .joined(separator: ", "))
+        classLevelsInfo.text? = classJSON.last!.classLevels
       } else {
         // need something in case first if statement is bad
       }
+      */
+      }
     }
-
+/*
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -89,6 +101,6 @@ class Class2ViewController: UIViewController {
   func isSavingThrowNull(){
     
   }
-
+*/
 
 }

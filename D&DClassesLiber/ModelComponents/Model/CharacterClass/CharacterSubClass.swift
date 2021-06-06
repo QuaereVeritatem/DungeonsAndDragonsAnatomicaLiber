@@ -9,34 +9,31 @@
 import Foundation
 
 struct CharacterSubClass: Codable {
-  let id: String
-  let index: IntegerLiteralType
-  let mainClass: MainClass // read as "class" in JSON
-  let name: String // subclass name
+  let index: String?
+  let mainClass: MainClass? // read as "class" in JSON
+  let name: String? // subclass name
   let subclassFlavor: String?
-  let description: [String]  // read as "desc" in JSON
-  let subclassFeatures: [SubclassFeatures] // read as "features" in JSON
+  let description: [String?]  // read as "desc" in JSON
+  let subClassLevels: String? // read as "features" in JSON
   let url: String
   
-  init(id: String, index: IntegerLiteralType, mainClass: MainClass, name: String, subclassFlavor: String?, description: [String], subclassFeatures: [SubclassFeatures],  url: String){
-    self.id =  id
+  init(index: String?, mainClass: MainClass?, name: String?, subclassFlavor: String?, description: [String?], subClassLevels: String?,  url: String){
     self.index = index
     self.mainClass = mainClass
     self.name = name
     self.subclassFlavor = subclassFlavor
     self.description = description
-    self.subclassFeatures = subclassFeatures
+    self.subClassLevels = subClassLevels
     self.url = url
   }
   
   enum CodingKeys: String, CodingKey {
-    case id = "_id"
     case index = "index"
     case mainClass = "class"
     case name = "name"
     case subclassFlavor = "subclass_Flavor"
     case description = "desc"
-    case subclassFeatures = "features"
+    case subClassLevels = "subclass_levels"
     case url = "url"
     
   }
@@ -57,7 +54,7 @@ struct MainClass: Codable {
   }
 }
 
-struct SubclassFeatures: Codable {
+struct SubClassLevels: Codable {
   let url: String
   let name: String
   

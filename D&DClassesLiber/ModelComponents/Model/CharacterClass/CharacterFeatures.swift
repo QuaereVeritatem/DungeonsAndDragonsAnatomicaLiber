@@ -10,8 +10,7 @@ import Foundation
 
 // skills based on level
 struct CharacterFeatures: Codable {
-  let id: String
-  let index: IntegerLiteralType
+  let index: String
   let name: String
   let level: IntegerLiteralType
   let url: String
